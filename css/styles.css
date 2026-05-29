@@ -41,7 +41,7 @@ nav a {
 }
 
 #hero img {
-  max-width: 100%; /*Puedes medir lo que tú quieras (tu tamaño nativo), PERO tu tope máximo permitido es el 100% de tu padre*/
+  max-width: 100%;
   height: auto;
 }
 
@@ -57,6 +57,10 @@ footer {
 footer a {
   display: inline-flex;
   align-items: center;
+}
+#redes-sociales a {
+  display: flex;
+  gap: 4px;
 }
 #contacto {
   display: flex;
@@ -186,5 +190,152 @@ header nav .logo {
   }
   .galeria img {
     width: 23%; /* 4 imágenes por fila */
+  }
+}
+
+/* ========================= PRECIOS.HTML ========================= */
+.planes {
+  display: grid;
+  gap: 24px;
+  padding: 32px;
+  max-width: 1000px; /* Limitamos el ancho máximo para que no se estiren tanto en pantallas grandes */
+  margin: 0 auto;
+}
+
+.plan {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 24px;
+  background: #fff;
+  height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plan .precio {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 16px 0;
+}
+
+#content-precios {
+  text-align: center;
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.plan a {
+  color: #1a1a1a;
+  text-decoration: none;
+  border: #1a1a1a 1px solid;
+  border-radius: 5px;
+  padding: 8px 20px;
+  display: inline-block;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+/* TABLET+ (≥640px): 2 columnas */
+@media (min-width: 640px) {
+  .planes {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* DESKTOP+ (≥1024px): CORREGIDO — Unificada la doble regla usando el atajo */
+@media (min-width: 1024px) {
+  .planes {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.clientes {
+  padding: 32px;
+  margin: 0 auto;
+}
+
+.logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.logo-cliente {
+  background: #f5f5f5;
+  padding: 24px;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 8px;
+}
+/* BASE: móvil — todo apilado en 1 columna */
+.faq-layout {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  gap: 16px;
+  min-height: 100vh;
+}
+
+.faq-layout header {
+  grid-area: header;
+}
+
+.faq-nav {
+  grid-area: nav;
+  padding: 16px;
+  margin: 0px 16px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.faq-main {
+  grid-area: main;
+  padding: 16px;
+}
+
+.faq-layout footer {
+  grid-area: footer;
+}
+
+.faq-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.faq-main details {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 16px 0;
+}
+
+.faq-main summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.faq-layout h1 {
+  padding: 16px;
+  text-align: center;
+}
+/* TABLET+ (≥640px): T invertida con sidebar + main */
+@media (min-width: 640px) {
+  .faq-layout {
+    grid-template-areas:
+      "header header"
+      "nav    main"
+      "footer footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
   }
 }

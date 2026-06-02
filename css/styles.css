@@ -32,7 +32,15 @@ body {
   font-family: system-ui, sans-serif;
   line-height: 1.5;
   color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+main {
+  flex-grow: 1;
+}
+
 header nav {
   display: flex;
   gap: 1rem;
@@ -83,7 +91,6 @@ footer {
   padding: 1rem 2rem;
   gap: 1rem;
   background: #f5f5f5;
-  /* ...tus propiedades anteriores... */
   background: var(--color-bg-soft);
 }
 
@@ -91,10 +98,19 @@ footer a {
   display: inline-flex;
   align-items: center;
 }
+
+#redes-sociales {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+}
+
 #redes-sociales a {
   display: flex;
   gap: 4px;
 }
+
 #contacto {
   display: flex;
   flex-direction: column;
@@ -206,6 +222,13 @@ header nav .logo {
     display: flex;
     flex-wrap: wrap;
   }
+
+  #content-precios,
+  .planes,
+  .clientes {
+    flex: 0 0 100%;
+  }
+
   #hero {
     flex: 1;
     max-width: 50%;
@@ -226,6 +249,7 @@ header nav .logo {
   }
   #monitor img {
     max-width: 80%;
+    height: auto;
   }
   #caracteristicas,
   #galeria {
@@ -274,6 +298,7 @@ header nav .logo {
 
 #content-precios {
   text-align: center;
+  padding-top: 32px;
 }
 
 .plan ul {
@@ -310,6 +335,7 @@ header nav .logo {
 .clientes {
   padding: 32px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .logos {
